@@ -1,0 +1,48 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Form Validation here:</h2>
+
+<form [formGroup]="personsForm" >
+    <!-- <p class = "bongie" *ngIf="!personsForm.valid">*required</p> -->
+  Name:  <mat-form-field>
+  <input matInput placeholder="enter name" formControlName="name" [(ngModel)]="name" required/>
+    </mat-form-field><br>
+First Name: <mat-form-field>
+  <input matInput placeholder="enter Fname" formControlName="Fname" [(ngModel)]="Fname" required/>
+   </mat-form-field><br>
+   Surname:<mat-form-field>
+   <input matInput placeholder="enter Surname" formControlName="Surname"[(ngModel)]="Surname" required />
+ 
+</mat-form-field><br>
+ID Number:<mat-form-field> 
+  <input matInput placeholder="enter IdNum" formControlName="id" #input maxlength="13" #input min="13" [(ngModel)]="id"required/>
+ </mat-form-field><br>
+Age:<mat-form-field>
+  <input matInput placeholder="enter age" formControlName="Age"  #input maxlength="3" [(ngModel)]="Age" required/>
+</mat-form-field><br>
+Email Address:<mat-form-field>
+   <input matInput placeholder="enter email" formControlName="Email" [(ngModel)]="Email" required/>
+  </mat-form-field><br>
+Mobile Number:<mat-form-field>
+  <input  matInput placeholder="enter Number" formControlName="MobileNum" #input maxlength="10" [(ngModel)]="MobileNum" required/>
+   </mat-form-field><br>
+
+ <button [disabled]="!personsForm.valid" (click)="AddNew()">Save</button>
+
+  <div *ngFor="let infos of info">
+    <h4>My Nickname:{{infos.name}}<br>
+      My First name:{{infos.Fname}}<br>
+    Surname:{{infos.Surname}}<br>
+    ID Number:{{infos.id}}<br>
+    Age:{{infos.Age}}<br>
+    Email Address:{{infos.Email}}<br>
+    Mobile Number:{{infos.MobileNum}}</h4>
+</div>
+</form>
+
+<router-outlet></router-outlet>

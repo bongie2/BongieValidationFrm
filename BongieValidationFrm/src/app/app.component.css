@@ -1,0 +1,11 @@
+.bongie{
+    color: red;
+}
+.frm{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.fullFrm{
+    width: 100%
+}
